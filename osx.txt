@@ -1,0 +1,7 @@
+SteerMouse - better control of scrolling for logitech mice
+Postico - Used to browse postgres databases
+Slack
+Hipchat
+Evernote
+Wunderlist
+eqMac - Audio equalizer
