@@ -1,0 +1,40 @@
+alias ls='ls -G'
+alias lss='ls -rlth'
+alias gits='git status'
+alias tmp='cd /tmp'
+alias grepr='grep -r'
+
+source virtualenvwrapper.sh
+
+source /usr/local/opt/autoenv/activate.sh
+
+function parse_git_branch {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+function proml {
+    local BLUE="\[\033[0;34m\]"
+    local RED="\[\033[0;31m\]"
+    local LIGHT_RED="\[\033[1;31m\]"
+    local GREEN="\[\033[0;32m\]"
+    local LIGHT_GREEN="\[\033[1;32m\]"
+    local WHITE="\[\033[1;37m\]"
+    local LIGHT_GRAY="\[\033[0;37m\]"
+    case $TERM in
+        xterm*)
+            TITLEBAR='\[\033]0;\u@\h:\007\]'
+            ;;
+        *)
+            TITLEBAR=""
+            ;;
+    esac
+    PS1="$PS1$WHITE\$(parse_git_branch)\$LIGHT_GRAY> "
+    PS2='> '
+    PS4='+ '
+}
+
+proml
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi

@@ -1,0 +1,17 @@
+apache-spark131
+autoenv
+boost
+brew-cask
+gcc
+gmp
+isl
+libmpc
+maven
+mpfr
+mysql
+numpy
+openssl
+postgresql
+readline
+sbt
+scala
