@@ -12,3 +12,9 @@ Host skim-mo-dev
     User chris.lucas
     HostName 10.16.48.245
     Port 17555
+
+Host skim-dbadmin
+    User chris.lucas
+    HostName dbadmin.skimlinks.net
+    Port 17555
+    IdentityFile ~/.ssh/id_rsa
